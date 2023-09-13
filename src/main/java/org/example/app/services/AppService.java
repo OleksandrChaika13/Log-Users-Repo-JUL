@@ -32,8 +32,16 @@ public class AppService {
         controller.runSubMenu();
     }
 
+    public void deleteUser() {
+        UserDeleteRepository repository = new UserDeleteRepository();
+        UserDeleteService service = new UserDeleteService(repository);
+        UserDeleteView view = new UserDeleteView();
+        UserDeleteController controller = new UserDeleteController(service, view);
+        controller.deleteUser();
+    }
+
     public void getNoSuchOption(int choice) {
-        int[] menuChoices = {0, 1, 2, 3};
+        int[] menuChoices = {0, 1, 2, 3, 4};
         if (!contains(menuChoices, choice)) {
             try {
                 throw new OptionException(Constants.INCORRECT_VALUE_MSG);
