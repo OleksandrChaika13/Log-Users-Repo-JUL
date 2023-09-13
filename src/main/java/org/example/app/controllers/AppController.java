@@ -21,6 +21,7 @@ public class AppController {
     private void filterChoice(int choice) {
         switch (choice) {
             case 1 -> service.createUser();
+            case 2 -> service.readUsers();
             case 0 -> view.getOutput(choice, Constants.APP_CLOSE_MSG);
             default -> service.getNoSuchOption(choice);
         }

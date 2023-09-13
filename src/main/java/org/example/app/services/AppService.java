@@ -17,8 +17,16 @@ public class AppService {
         controller.createUser();
     }
 
+    public void readUsers() {
+        UserReadRepository repository = new UserReadRepository();
+        UserReadService service = new UserReadService(repository);
+        UserReadView view = new UserReadView();
+        UserReadController controller = new UserReadController(service, view);
+        controller.readUsers();
+    }
+
     public void getNoSuchOption(int choice) {
-        int[] menuChoices = {0, 1};
+        int[] menuChoices = {0, 1, 2};
         if (!contains(menuChoices, choice)) {
             try {
                 throw new OptionException(Constants.INCORRECT_VALUE_MSG);
