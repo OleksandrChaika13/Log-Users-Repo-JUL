@@ -22,6 +22,7 @@ public class AppController {
         switch (choice) {
             case 1 -> service.createUser();
             case 2 -> service.readUsers();
+            case 3 -> service.updateUser();
             case 0 -> view.getOutput(choice, Constants.APP_CLOSE_MSG);
             default -> service.getNoSuchOption(choice);
         }

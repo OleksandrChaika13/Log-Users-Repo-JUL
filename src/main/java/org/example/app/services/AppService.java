@@ -25,8 +25,15 @@ public class AppService {
         controller.readUsers();
     }
 
+    public void updateUser() {
+        UserUpdateService service = new UserUpdateService();
+        UserUpdateView view = new UserUpdateView();
+        UserUpdateController controller = new UserUpdateController(view, service);
+        controller.runSubMenu();
+    }
+
     public void getNoSuchOption(int choice) {
-        int[] menuChoices = {0, 1, 2};
+        int[] menuChoices = {0, 1, 2, 3};
         if (!contains(menuChoices, choice)) {
             try {
                 throw new OptionException(Constants.INCORRECT_VALUE_MSG);
