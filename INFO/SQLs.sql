@@ -16,6 +16,9 @@ INSERT INTO users (name, phone, email) VALUES(?, ?, ?)
 -- Вибір юзеру з таблиці
 SELECT * FROM users
 
+-- Читання юзерів
+SELECT id, name, phone, email FROM users
+
 -- Оновлення всіх даних юзера
 UPDATE users SET name = ?, phone = ?, email = ? WHERE id = ?
 
